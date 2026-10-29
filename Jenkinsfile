@@ -11,12 +11,12 @@ pipeline {
       stage('Build Message'){
         steps{
             echo "Build Sucessfully!!!"
-            ls -al
+            sh ls -al
         }
       }
     }
   post{
-    sucess {echo "Pipeline finished sucessfully!!"}
+    success {echo "Pipeline finished sucessfully!!"}
     failure {echo "Pipeline failed!!"}
   }
 }
