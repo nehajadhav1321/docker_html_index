@@ -26,9 +26,14 @@ pipeline {
                 sh 'docker build -t myimage .'
             }
         }
-        stage('List images'){
+        stage('Run Container'){
             steps{
-                sh 'docker images'
+                sh 'docker run -d --name mycont myimage .'
+            }
+        }
+        stage('Verify Container'){
+            steps{
+                sh 'docker ps'
             }
         }
     }
