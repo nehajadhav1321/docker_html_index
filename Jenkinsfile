@@ -10,7 +10,8 @@ pipeline {
         }
       stage('Build Message'){
         steps{
-          ls -al
+            echo "Build Sucessfully!!!"
+            ls -al
         }
       }
     }
