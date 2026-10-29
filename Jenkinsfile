@@ -15,11 +15,27 @@ pipeline {
                 sh 'ls -al'
             }
         }
+        stage('Verify Dockerfile'){
+            steps {
+                sh 'test -f Dockerfile'
+                echo 'Dockerfile found.'
+            }
+        }
+        stage('Build Docker Image'){
+            steps{
+                sh 'docker build -t myimage .'
+            }
+        }
+        stage('List images'){
+            steps{
+                sh 'docker images'
+            }
+        }
     }
 
     post {
         success {
-            echo 'Pipeline finished successfully!!'
+            echo 'Image build successfully!!'
         }
         failure {
             echo 'Pipeline failed!!'
