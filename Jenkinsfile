@@ -28,7 +28,8 @@ pipeline {
         }
         stage('Run Container'){
             steps{
-                sh 'docker run -d --name mycont myimage .'
+                
+                sh 'docker run -d --name mycontainer myimage .'
             }
         }
         stage('Verify Container'){
