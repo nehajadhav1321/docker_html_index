@@ -29,7 +29,7 @@ pipeline {
         stage('Run Container'){
             steps{
                 
-                sh 'docker run -d --name cicdcont myimage .'
+                sh 'docker run -d --name cicdcontainer myimage .'
             }
         }
         stage('Verify Container'){
